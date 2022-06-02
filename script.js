@@ -12,7 +12,6 @@ fs.readFile("./floors.txt", (err, data) => {
   const answer = floorsArray.reduce((acc, cur) => {
     return cur === "(" ? (acc += 1) : (acc -= 1);
   }, 0);
-  console.log("floor: ", answer);
 
   //Part 2
   let curFloor = 0;
@@ -23,5 +22,6 @@ fs.readFile("./floors.txt", (err, data) => {
     return curFloor < 0;
   });
   console.timeEnd("challenge");
-  console.log(counter);
+  console.log("Finish at floor: ", answer);
+  console.log("Arrives at level -1:", counter);
 });
